@@ -49,14 +49,14 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
     email = EmailField('email address', max_length=50 ,unique=True, null=False, blank=False,db_index=True)
     name = CharField('name', max_length=50, null=False, blank=False)
-    role = CharField('role', choices=roles_choices ,max_length=50,blank=False, default='regular')
+    role = CharField('role', choices=roles_choices ,max_length=50,blank=False, default='admin')
     status = CharField('status', choices=status_choices, max_length=10, blank=False, default='activo')
     statuscredential = CharField('statuscredential', choices=statuscredential_choices, max_length=10, blank=False, default='revision')
     created_at = DateTimeField('created_at', auto_now_add=True)
     updated_at = DateTimeField('updated_at', auto_now=True)
 
-    is_staff = BooleanField(default=False)
-    is_superuser = BooleanField(default=False)
+    is_staff = BooleanField(default=True)
+    is_superuser = BooleanField(default=True)
 
     historical = HistoricalRecords()
     objects = UserManager()
