@@ -10,12 +10,14 @@ from apps.users.models import User
   
 class RegisterView(generics.GenericAPIView):
     serializer_class = RegisterSerializer    
-    def post(self,request):
-        user=request.data
+     
+    def post(self, request):
+        user = request.data
         serializer = self.serializer_class(data=user)
         serializer.is_valid(raise_exception=True)
-        serializer.save()
+        user_obj = serializer.save()
         user_data = serializer.data
+        user_data['id'] = user_obj.id  # Add the ID to the response data
         return Response(user_data, status=status.HTTP_201_CREATED)
 
 class LoginAPIView(generics.GenericAPIView):
