@@ -95,7 +95,7 @@ class request_reasonView(GenericViewSet):
 
     def get_queryset(self):
         if  self.queryset is None:
-            self.queryset = self.model.objects.exclude(status='inactiva')
+            self.queryset = self.model.objects.exclude(status='eliminado')
         return self.queryset
 
     def list(self, request):
@@ -123,7 +123,10 @@ class request_reasonView(GenericViewSet):
             data = {
                 'status': 201,
                 'message': 'Registro creado correctamente',
-                'data': request_reason_serializer.data
+                'data': {
+                'id': request_reason.id,
+                **request_reason_serializer.data,
+            },
             }
             return Response(data, status=201)
         data = {
@@ -154,7 +157,7 @@ class request_reasonView(GenericViewSet):
 
     def destroy(self, request, pk):
         request_reason_serializer = self.get_object(pk=pk)
-        request_reason_serializer.status = 'inactiva'
+        request_reason_serializer.status = 'eliminado'
         request_reason_serializer.save()
         return Response({
             'message': 'Informacion eliminada correctamente'

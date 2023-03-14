@@ -39,10 +39,11 @@ statuscareer_choices = (
 )
 
 statusrequestreason_choices = (
-    ('activa', 'Activa'),
-    ('inactiva', 'Inactiva'),
+    ('revision', 'Revision'),
+    ('denegada', 'Denegada'),
+    ('aceptado', 'Aceptado'),
+    ('eliminado', 'Eliminado'),
 )
-
 statusinfo_choices = (
     ('en uso', 'En Uso'),
     ('eliminado', 'Eliminado'),
