@@ -91,7 +91,7 @@ class request_reasonView(GenericViewSet):
     queryset = None
     
     def get_object(self, pk):
-        return get_object_or_404(self.model, user=pk)
+        return get_object_or_404(self.model, pk=pk)
 
     def get_queryset(self):
         if  self.queryset is None:
