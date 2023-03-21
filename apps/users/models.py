@@ -47,13 +47,13 @@ class UserManager(BaseUserManager):
         return self.create_user(email, name, password, **other_fields)
 
 class User(AbstractBaseUser, PermissionsMixin):
-    email = EmailField('email address', max_length=50 ,unique=True, null=False, blank=False,db_index=True)
-    name = CharField('name', max_length=50, null=False, blank=False)
-    role = CharField('role', choices=roles_choices ,max_length=50,blank=False, default='regular')
-    status = CharField('status', choices=status_choices, max_length=10, blank=False, default='activo')
-    statuscredential = CharField('statuscredential', choices=statuscredential_choices, max_length=10, blank=False, default='revision')
-    created_at = DateTimeField('created_at', auto_now_add=True)
-    updated_at = DateTimeField('updated_at', auto_now=True)
+    email = EmailField('Correo electronico', max_length=50 ,unique=True, null=False, blank=False,db_index=True)
+    name = CharField('Nombre', max_length=50, null=False, blank=False)
+    role = CharField('Rol', choices=roles_choices ,max_length=50,blank=False, default='regular')
+    status = CharField('Estatus', choices=status_choices, max_length=10, blank=False, default='activo')
+    statuscredential = CharField('Estatus de credencial', choices=statuscredential_choices, max_length=10, blank=False, default='revision')
+    created_at = DateTimeField('Creado', auto_now_add=True)
+    updated_at = DateTimeField('Actualizado', auto_now=True)
 
     is_staff = BooleanField(default=False)
     is_superuser = BooleanField(default=False)

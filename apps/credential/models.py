@@ -50,10 +50,10 @@ statusinfo_choices = (
 )
 
 class careers(Model):
-    nameCareers = CharField('nameCareers', max_length=50)
-    status = CharField('status', choices=statuscareer_choices, max_length=10, blank=False, default='activa')
-    created_at = DateTimeField('created_at', auto_now_add=True)
-    updated_at = DateTimeField('updated_at', auto_now_add=True)
+    nameCareers = CharField('Carreras', max_length=50)
+    status = CharField('Estatus de la carrera', choices=statuscareer_choices, max_length=10, blank=False, default='activa')
+    created_at = DateTimeField('Creado', auto_now_add=True)
+    updated_at = DateTimeField('Actualizado', auto_now_add=True)
     
     class Meta:
         db_table = 'careers'
@@ -64,13 +64,13 @@ class careers(Model):
         return f'{self.nameCareers.__str__()}'
     
 class emergency_info(Model):
-    emergency_name = CharField('emergency_name', max_length=100)
-    emergency_phone = CharField('emergency phone', max_length=20)
-    emergency_phone2 = CharField('emergency phone 2', max_length=20,null=True, blank=True)
-    blood_type = CharField('blood type', max_length=10)
-    status = CharField('status', choices=statusinfo_choices, max_length=10, blank=False, default='en uso')
-    allergy = CharField('allergy', max_length=100)
-    allergy2 = CharField('allergy 2', max_length=100,null=True, blank=True)
+    emergency_name = CharField('Nombre de emergencia', max_length=100)
+    emergency_phone = CharField('Numero de emergencia', max_length=20)
+    emergency_phone2 = CharField('Numero de emergencia 2', max_length=20,null=True, blank=True)
+    blood_type = CharField('Tipo de sangre', max_length=10)
+    status = CharField('Estatus', choices=statusinfo_choices, max_length=10, blank=False, default='en uso')
+    allergy = CharField('Alergia', max_length=100)
+    allergy2 = CharField('Alergia 2', max_length=100,null=True, blank=True)
  
     class Meta:
         db_table = 'emergency_info'
@@ -85,14 +85,14 @@ class student(Model):
     user = OneToOneField(User, on_delete=CASCADE)
     id_careers = ForeignKey(careers, on_delete=CASCADE, verbose_name='careers',default=1)
     id_emInfo = ForeignKey(emergency_info, on_delete=CASCADE, verbose_name='emergency_info',default=1)
-    personalName = CharField('personalName', max_length=100, null=False, blank=False)
-    lastname = CharField('lastname', max_length=100)
-    license = CharField('license', max_length=20,)
-    birthday = DateField('birthday', null=True, blank=True)
-    grade = CharField('grade', choices=statusStudentGrades_choices, max_length=10, blank=False, default='ninguno')
-    city = CharField('city', max_length=100, null=False, blank=False)
-    status = CharField('status', choices=statustudent_choices, max_length=15, blank=False, default='estudiante')
-    photo = ImageField('photo',upload_to="alumn/photo", null=True, blank=True, default="alumn/logouni.jpg")
+    personalName = CharField('Nombre', max_length=100, null=False, blank=False)
+    lastname = CharField('Apellido', max_length=100)
+    license = CharField('Matricula', max_length=20,)
+    birthday = DateField('Año de nacimiento', null=True, blank=True)
+    grade = CharField('Cuatrimestre y grupo', choices=statusStudentGrades_choices, max_length=10, blank=False, default='ninguno')
+    city = CharField('Cuidad', max_length=100, null=False, blank=False)
+    status = CharField('Estatus', choices=statustudent_choices, max_length=15, blank=False, default='estudiante')
+    photo = ImageField('Foto',upload_to="alumn/photo", null=True, blank=True, default="alumn/logouni.jpg")
     class Meta:
         db_table = 'student'
         verbose_name = 'student'
@@ -106,8 +106,8 @@ class student(Model):
 
 class request_reason(Model):
     id_st = ForeignKey(student, on_delete=CASCADE, verbose_name='student',default=1)
-    reason = CharField('reason', max_length=500, null=False, blank=False)
-    status = CharField('status', max_length=10, choices=statusrequestreason_choices, default='activa')
+    reason = CharField('Razon', max_length=500, null=False, blank=False)
+    status = CharField('Estatus', max_length=10, choices=statusrequestreason_choices, default='activa')
     class Meta:
         db_table = 'request_reason'
         verbose_name = 'request_reason'
