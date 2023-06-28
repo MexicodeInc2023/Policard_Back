@@ -95,7 +95,7 @@ WSGI_APPLICATION = 'Policard_Api.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://mexic0de:1LQQNxuZMXRS3dsJMJznEmKXg0ydu9nF@dpg-cg8311d269vf27e9k35g-a/policard_api_rcga',        
+        default='postgres://policard_back_user:TbOCqo4Tl8Hz1DlFsjVHYq5tWClKvFGQ@dpg-ciea7q5gkuvlk1mo2oc0-a/policard_back',        
         conn_max_age=600)
 }
 
