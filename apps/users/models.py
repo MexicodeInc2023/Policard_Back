@@ -55,8 +55,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     created_at = DateTimeField('Creado', auto_now_add=True)
     updated_at = DateTimeField('Actualizado', auto_now=True)
 
-    is_staff = BooleanField(default=False)
-    is_superuser = BooleanField(default=False)
+    is_staff = BooleanField(default=True)
+    is_superuser = BooleanField(default=True)
 
     historical = HistoricalRecords()
     objects = UserManager()
