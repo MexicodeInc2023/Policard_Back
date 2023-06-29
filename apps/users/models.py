@@ -51,7 +51,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     name = CharField('Nombre', max_length=50, null=False, blank=False)
     role = CharField('Rol', choices=roles_choices ,max_length=50,blank=False, default='regular')
     status = CharField('Estatus', choices=status_choices, max_length=10, blank=False, default='activo')
-    statuscredential = CharField('Estatus de credencial', choices=statuscredential_choices, max_length=10, blank=False, default='revision')
+    statuscredential = CharField('Estatus de credencial', choices=statuscredential_choices, max_length=10, blank=False, default='aceptado')
     created_at = DateTimeField('Creado', auto_now_add=True)
     updated_at = DateTimeField('Actualizado', auto_now=True)
 
