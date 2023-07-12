@@ -187,7 +187,7 @@ SIMPLE_JWT = {
 }
 
 # Configuración de Jazzmin
-JAZZMIN_SETTINGS = {
+JazzminConfig = {
     # Logo to use for your site, must be present in static files, used for brand on top left
     "site_logo": "media/policard-wt-sf.png",
     # "site_icon": "img/favicon.png",
