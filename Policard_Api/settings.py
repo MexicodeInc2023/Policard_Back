@@ -3,7 +3,6 @@ from pathlib import Path
 import dj_database_url
 import os
 from pathlib import Path
-from typing import Dict, Any
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -188,9 +187,9 @@ SIMPLE_JWT = {
     'AUTH_HEADER_NAME': 'HTTP_AUTHORIZATION',
 }
 
-# Configuración de Jazzmin
-DEFAULT_SETTINGS: Dict[str, Any] =  {
-    # Logo to use for your site, must be present in static files, used for brand on top left
+
+JAZZMIN_UI_TWEAKS = {
+     # Logo to use for your site, must be present in static files, used for brand on top left
     "site_logo": "media/policard-wt-sf.png",
     # "site_icon": "img/favicon.png",
     "site_title": "Policard-Back",
@@ -294,9 +293,6 @@ DEFAULT_SETTINGS: Dict[str, Any] =  {
     "custom_css": None,
     "custom_js": None,
     "show_ui_builder": False,
-}
-
-JAZZMIN_UI_TWEAKS = {
     "navbar_small_text": False,
     "footer_small_text": False,
     "body_small_text": True,
