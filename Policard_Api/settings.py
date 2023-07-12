@@ -187,11 +187,15 @@ SIMPLE_JWT = {
 }
 
 # Configuración de Jazzmin
-JazzminConfig = {
+JAZZMIN_SETTINGS = {
     # Logo to use for your site, must be present in static files, used for brand on top left
     "site_logo": "media/policard-wt-sf.png",
     # "site_icon": "img/favicon.png",
-
+    "site_title": "Policard-Back",
+    
+    "site_header": "Policard-Back",
+    # Title on the brand (19 chars max) (will default to current_admin_site.site_header)
+    "site_brand": "Mexic0de",
     # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
     "login_logo": "media/policard-wt-sf.png",
 
@@ -289,6 +293,7 @@ JazzminConfig = {
     "custom_js": None,
     "show_ui_builder": False,
 }
+
 JAZZMIN_UI_TWEAKS = {
     "navbar_small_text": False,
     "footer_small_text": False,
@@ -309,7 +314,7 @@ JAZZMIN_UI_TWEAKS = {
     "sidebar_nav_compact_style": False,
     "sidebar_nav_legacy_style": True,
     "sidebar_nav_flat_style": False,
-    "theme": "superhero",
+    "theme": "lux",
     "dark_mode_theme": None,
     "button_classes": {
         "primary": "btn-primary",
