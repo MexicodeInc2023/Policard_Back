@@ -193,10 +193,10 @@ JazzminConfig = {
     # "site_icon": "img/favicon.png",
 
     # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
-    "login_logo": None,
+    "login_logo": "media/policard-wt-sf.png",
 
     # Logo to use for login form in dark themes (defaults to login_logo)
-    "login_logo_dark": None,
+    "login_logo_dark": "media/policard-wt-sf.png",
 
     # CSS classes that are applied to the logo above
     "site_logo_classes": "img-circle",
@@ -309,7 +309,7 @@ JAZZMIN_UI_TWEAKS = {
     "sidebar_nav_compact_style": False,
     "sidebar_nav_legacy_style": True,
     "sidebar_nav_flat_style": False,
-    "theme": "darkly",
+    "theme": "superhero",
     "dark_mode_theme": None,
     "button_classes": {
         "primary": "btn-primary",
