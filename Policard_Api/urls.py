@@ -6,9 +6,6 @@ from drf_yasg import openapi
 from django.conf.urls.static import static
 from django.conf import settings
 
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView, TokenRefreshView, TokenVerifyView, TokenBlacklistView
-)
 
 from apps.users.views import LoginAPIView, LogoutAPIView, RegisterView
 
@@ -30,10 +27,6 @@ urlpatterns = [
     path('api/logout/', LogoutAPIView.as_view(), name = 'logout'),
     path('api/login/',LoginAPIView.as_view(), name = 'login'),
     path('api/register/',RegisterView.as_view(),name="register"),
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
-    path('api/token/blacklist/', TokenBlacklistView.as_view(), name='token_blacklist'),
 
     path('api/', include('apps.users.urls'), name='users'),
     
