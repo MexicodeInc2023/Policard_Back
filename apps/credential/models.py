@@ -92,7 +92,7 @@ class student(Model):
     grade = CharField('Cuatrimestre y grupo', choices=statusStudentGrades_choices, max_length=10, blank=False, default='ninguno')
     city = CharField('Cuidad', max_length=100, null=False, blank=False)
     status = CharField('Estatus', choices=statustudent_choices, max_length=15, blank=False, default='estudiante')
-    photo = ImageField('Foto',upload_to="alumn/photo", null=True, blank=True, default="alumn/logouni.jpg")
+    photo = ImageField('Foto',upload_to="media/alumn/photo", null=True, blank=True, default="media/alumn/logouni.jpg")
     class Meta:
         db_table = 'student'
         verbose_name = 'student'
