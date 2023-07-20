@@ -96,7 +96,7 @@ WSGI_APPLICATION = 'Policard_Api.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='sqlite:///db.sqlite3',        
+        default='postgres://policard_back_user:TbOCqo4Tl8Hz1DlFsjVHYq5tWClKvFGQ@dpg-ciea7q5gkuvlk1mo2oc0-a/policard_back',        
         conn_max_age=600)
 }
 
@@ -133,14 +133,25 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.0/howto/static-files/
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "media/"
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = 'static/'
-if not DEBUG:  
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+# # Static files (CSS, JavaScript, Images)
+# # https://docs.djangoproject.com/en/4.0/howto/static-files/
+# MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+# MEDIA_URL = "media/"
+
+# STATIC_URL = 'static/'
+# if not DEBUG:  
+#     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -189,8 +200,8 @@ SIMPLE_JWT = {
 
 
 JAZZMIN_UI_TWEAKS = {
-            # Logo to use for your site, must be present in static files, used for brand on top left
-    "site_logo": "static/policard-wt-sf.png",
+     # Logo to use for your site, must be present in static files, used for brand on top left
+    "site_logo": "media/policard-wt-sf.png",
     # "site_icon": "img/favicon.png",
     "site_title": "Policard-Back",
     
@@ -198,10 +209,10 @@ JAZZMIN_UI_TWEAKS = {
     # Title on the brand (19 chars max) (will default to current_admin_site.site_header)
     "site_brand": "Mexic0de",
     # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
-    "login_logo": "static/policard-wt-sf.png",
+    "login_logo": "media/policard-wt-sf.png",
 
     # Logo to use for login form in dark themes (defaults to login_logo)
-    "login_logo_dark": "static/policard-wt-sf.png",
+    "login_logo_dark": "media/policard-wt-sf.png",
 
     # CSS classes that are applied to the logo above
     "site_logo_classes": "img-circle",
@@ -292,7 +303,7 @@ JAZZMIN_UI_TWEAKS = {
     # Relative paths to custom CSS/JS scripts (must be present in static files)
     "custom_css": None,
     "custom_js": None,
-    "show_ui_builder": False, 
+    "show_ui_builder": False,
     "navbar_small_text": False,
     "footer_small_text": False,
     "body_small_text": True,
