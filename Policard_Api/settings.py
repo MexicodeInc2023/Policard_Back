@@ -186,8 +186,10 @@ SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('Bearer'),
     'AUTH_HEADER_NAME': 'HTTP_AUTHORIZATION',
 }
-JAZZMIN_SETTINGS = {
-        # Logo to use for your site, must be present in static files, used for brand on top left
+
+
+JAZZMIN_UI_TWEAKS = {
+            # Logo to use for your site, must be present in static files, used for brand on top left
     "site_logo": "static/policard-wt-sf.png",
     # "site_icon": "img/favicon.png",
     "site_title": "Policard-Back",
@@ -291,9 +293,6 @@ JAZZMIN_SETTINGS = {
     "custom_css": None,
     "custom_js": None,
     "show_ui_builder": False, 
-}
-
-JAZZMIN_UI_TWEAKS = {
     "navbar_small_text": False,
     "footer_small_text": False,
     "body_small_text": True,
