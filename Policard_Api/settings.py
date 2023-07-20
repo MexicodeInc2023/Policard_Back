@@ -135,11 +135,11 @@ USE_TZ = True
 MEDIA_ROOT = os.path.join(dj_database_url, "media")
 MEDIA_URL = "media/"
 
-STATIC_ROOT = os.path.join('dj_database_url', 'staticfiles')
+STATIC_ROOT = os.path.join(dj_database_url, 'staticfiles')
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = (
-    os.path.join('dj_database_url', 'static'),
+    os.path.join(dj_database_url, 'static'),
 )
 
 # # Static files (CSS, JavaScript, Images)
