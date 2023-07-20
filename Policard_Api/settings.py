@@ -133,14 +133,14 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = os.path.join(dj_database_url, "media")
 MEDIA_URL = "media/"
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(dj_database_url, 'staticfiles')
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(dj_database_url, 'static'),
 )
 
 # # Static files (CSS, JavaScript, Images)
